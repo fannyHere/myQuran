@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:my_quran/all_surah/surah_list.dart';
+import 'package:my_quran/surah_list.dart';
+import 'package:my_quran/theme/color.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -12,8 +13,12 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  late bool isDarkMode;
+
   @override
   Widget build(BuildContext context) {
+    isDarkMode = Theme.of(context).brightness == Brightness.dark;
+
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -26,6 +31,7 @@ class _HomePageState extends State<HomePage> {
                 style: TextStyle(
                   fontSize: 40,
                   fontWeight: FontWeight.bold,
+                  //color: Color(0xFF431AA1),
                 ),
               ),
             ),
@@ -36,6 +42,7 @@ class _HomePageState extends State<HomePage> {
               child: Text(
                 "Apakah kamu sudah membaca al-Quran hari ini?",
                 style: TextStyle(
+                  //color: Colors.grey,
                   fontSize: 20,
                 ),
               ),
@@ -61,16 +68,12 @@ class _HomePageState extends State<HomePage> {
               },
               child: Text("KLIK ME"),
               style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(Colors.blue),
-                foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                padding:
-                    MaterialStateProperty.all<EdgeInsets>(EdgeInsets.all(10)),
-                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                  RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(18.0),
-                  ),
+                backgroundColor: MaterialStateProperty.all<Color>(
+                  isDarkMode ? appWhite : appPurple,
                 ),
-                elevation: MaterialStateProperty.all<double>(10),
+                foregroundColor: MaterialStateProperty.all<Color>(
+                  isDarkMode ? appPurple : appWhite,
+                ),
               ),
             ),
           ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../all_surah/object_surah.dart';
-import '../model/surah.dart';
+import 'object/object_surah.dart';
+import 'model/surah.dart';
 
 class surah_list extends StatefulWidget {
   const surah_list({super.key});
@@ -16,7 +16,7 @@ class _surah_listState extends State<surah_list> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
+        // backgroundColor: Colors.blue, //appBarTheme
         title: Text("Surah"),
       ),
       body: FutureBuilder(

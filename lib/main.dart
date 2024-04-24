@@ -1,26 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:my_quran/detail_surah/detail.dart';
-import 'all_surah/surah_list.dart';
+import 'package:my_quran/detail.dart';
+import 'surah_list.dart';
 import 'home.dart';
+import 'theme/color.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-        //fontFamily: GoogleFonts.dosis().fontFamily,
-      ),
+      // themeMode: ThemeMode.dark, //atur di sini
+      // darkTheme: MyThemes2.darkTheme, //atur disini
+      themeMode: ThemeMode.light,
+      darkTheme: MyThemes1.lightTheme,
       home: HomePage(),
       initialRoute: HomePage.routeName,
       routes: {

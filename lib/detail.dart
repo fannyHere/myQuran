@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_quran/detail_surah/object_detail_surah.dart';
+import 'package:my_quran/object/object_detail_surah.dart';
 import 'package:my_quran/model/detail_surah.dart' as detail;
 import 'package:my_quran/model/surah.dart';
 
@@ -35,7 +35,7 @@ class _Detail_all_surahState extends State<Detail_all_surah> {
           title: Text(
             surah!.name.transliteration.id,
           ),
-          backgroundColor: Colors.blue,
+          // backgroundColor: Colors.blue, //appBarTheme
           bottom: TabBar(
             tabs: [
               Tab(text: "Baca"),
